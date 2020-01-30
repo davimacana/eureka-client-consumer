@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: user-frase-do-dia-service
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+app:
+  fraseDoDiaService:
+    serviceId: frase-do-dia-service
+    endpoint:
+      fraseDoDia: /frasedodia
+
+frase-do-dia-service:
+  ribbon:
+    eureka:
+      enabled: true
+    ServerListRefreshInterval: 15000
